@@ -50,7 +50,7 @@ inline constexpr uint16_t FANCTLHEATBREAK_RPM_MAX =
 #if (PRINTER_IS_PRUSA_MK4 || PRINTER_IS_PRUSA_MK3_5 || PRINTER_IS_PRUSA_iX || PRINTER_IS_PRUSA_XL)
     15180
 #else
-    8000
+    12800
 #endif
     ;
 inline constexpr uint8_t FANCTLHEATBREAK_PWM_THR = 20;
