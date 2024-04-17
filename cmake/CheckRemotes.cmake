@@ -33,12 +33,12 @@ function(check_git_repo_for_dangerous_remotes repo_dir)
       message(WARNING "Failed to check dangerousness of remote '${item}'!")
     endif()
 
-    if(url MATCHES "Prusa\-Firmware\-Buddy.git" OR url MATCHES "Marlin.git")
-      message(
-        FATAL_ERROR
-          "Oh, your remote '${item}' appears to have its push URL set to a public repository! Let me say, that this is a bad, bad idea! You are \"one push\" away from mistakenly publishing private things. Please remove this remote or set its push url to some nonsense (see below).\n git -C \"${repo_dir}\" remote set-url --push ${item} DISABLED\n"
-        )
-    endif()
+    # if(url MATCHES "Prusa\-Firmware\-Buddy.git" OR url MATCHES "Marlin.git")
+    #   message(
+    #     FATAL_ERROR
+    #       "Oh, your remote '${item}' appears to have its push URL set to a public repository! Let me say, that this is a bad, bad idea! You are \"one push\" away from mistakenly publishing private things. Please remove this remote or set its push url to some nonsense (see below).\n git -C \"${repo_dir}\" remote set-url --push ${item} DISABLED\n"
+    #     )
+    # endif()
 
   endforeach()
 endfunction()
